@@ -30,8 +30,8 @@ def count_make_change_recursive(N, coins, M):
 def count_make_change_bottom_up(N, coins, M):
     counts = [0] * (N+1)
     counts[0] = 1
+    sum = 0
     for i in range(0, M):
-        sum = 0
         for j in range(coins[i],N+1):
             counts[j] += counts[j-coins[i]]
     return counts[N]

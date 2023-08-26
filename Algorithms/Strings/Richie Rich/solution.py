@@ -51,14 +51,14 @@ def make_palin(n, k, number):
         elif flips_available > 0:
             decrement = 2
             if dig_1 == 9:
-                decrement = decrement - 1
+                decrement -= 1
             if dig_2 == 9:
-                decrement = decrement - 1
+                decrement -= 1
             if flips_available >= decrement:
                 number[i] = str(9)
                 number[n-i-1] = str(9)
                 flips_available = flips_available - decrement
-        elif dig_1 < 0 and flips_available <= 0:
+        elif dig_1 < 0:
             number[i] = str(-1 * dig_1)
     if n%2 != 0 and flips_available>0:
         number[int(n/2)] = str(9)
